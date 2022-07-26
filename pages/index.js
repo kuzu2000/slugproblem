@@ -56,7 +56,8 @@ export default function Home({ todoProps }) {
       <div className="todos">
         {todos.length > 0 ? (
           todos.map((todo) => (
-            <Link key={todo.slug} href={`/posts/${todo.slug}`}>
+            // not todo.title but todo.id, id to uniquely identify a firebase document
+            <Link key={todo.slug} href={`/posts/${todo.id}`}>  
               <div className="todo">
                 <div className="text">{todo.title}</div>
                 <div className="decription">{todo.detail.substr(0, 50)}...</div>
